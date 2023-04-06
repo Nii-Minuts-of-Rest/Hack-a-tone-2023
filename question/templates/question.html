@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Список Вопросов</title>
+</head>
+<body>
+    <a href="show?id={{question.id}}">Обновить</a> | <a href="show">Назад</a>
+    <h2>Вопрос №{{ question.id }}</h2>
+    <h3>{{ question.question_text }}</h3>
+    <a href="answer?id={{question.id}}">Ссылка для прохождения опроса</a>
+    <h4>Отчёты</h4>
+    <a href="analise_go?id={{question.id}}">Провести анализ</a>
+    <table>
+        <thead><th>Дата Создания</th><th>Номер</th><th>Действия</th></thead>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.creation_date }}</td>
+            <td>{{ report.id }}</td>
+            <td>
+                <a href="report?id={{report.id}}">Просмотр</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h4>Ответы ({{ count }})</h4>
+    <table>
+        <thead><th>Ответ</th><th>Действия</th></thead>
+        {% for answer in answers %}
+        <tr>
+            <td>{{ answer.answer_edited }}</td>
+            <td>
+                <a href="edit_answer?id={{answer.id}}">Редактировать</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Список Вопросов</title>
+</head>
+<body>
+    <h2>Ответить на вопрос</h2>
+    <h4>Вопрос {{question.question_text}}</h4>
+    <h4>Ваш ответ:</h4>
+    <form method="post" action="answer">
+        {% csrf_token %}
+        <input name="q_id" value="{{question.id}}" type="hidden"/>
+        <input name="answer" />
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+</html>
