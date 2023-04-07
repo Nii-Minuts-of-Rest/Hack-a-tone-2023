@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Список Вопросов</title>
+</head>
+<body>
+    <a href="show">Назад</a>
+    <h4>Новый вопрос</h4>
+    <form method="post" action="add_e">
+        {% csrf_token %}
+        <input name="question_l"/>
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+</html>

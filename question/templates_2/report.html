@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Список Вопросов</title>
+</head>
+<body>
+    <a href="show?id={{question.id}}">Назад</a>
+    <h2>Отчёт №{{report.id}}</h2>
+    <h2>Дата создания {{report.creation_date}}</h2>
+    <h2>Количество входных данных {{report.data_count}}</h2>
+    <h4>Вопрос: {{question.question_text}}</h4>
+    <h4>Результат анализа:</h4>
+
+    {% for TagGroup in TagGroups %}
+    <h4>Группа</h4>
+    <table>
+        <thead><th>Слова</th></thead>
+        {% for Tag in Tags %}
+        {% if Tag.tagsGroup_id.id == TagGroup.id %}
+        <tr>
+            <td>{{ Tag.tag_text }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        {% for Sent in Sentences %}
+        {% if Sent.tagsGroup_id.id == TagGroup.id %}
+        <h5>{{ Sent.sentence_text }}</h5>
+        {% endif %}
+        {% endfor %}
+    </table>
+    {% endfor %}
+
+</body>
+</html>

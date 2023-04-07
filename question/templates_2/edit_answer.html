@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Список Вопросов</title>
+</head>
+<body>
+    <a href="show?id={{answer.question_id.id}}">Назад</a>
+    <h2>Отредактировать ответ</h2>
+    <h4>Оригинальный ответ {{answer.anwser_text}}</h4>
+    <h4>Текущий ответ {{answer.answer_edited}}</h4>
+    <h4>Новый ответ</h4>
+    <form method="post" action="edit_answer">
+        {% csrf_token %}
+        <input name="id_ans" value="{{answer.id}}" type="hidden"/>
+        <input name="new_answer" value="{{answer.answer_edited}}" />
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+</html>

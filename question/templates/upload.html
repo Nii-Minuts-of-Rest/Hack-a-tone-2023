@@ -1,5 +1,13 @@
+<header style="width: 100%;  background-color: #1240AB;  color: white;  text-align: center;  line-height: 1.55;  padding: 20px;  margin-bottom: 20px;">
+  <h1>Хакатон - Корпоративная Академия Росатома</h1>
+  <h2>НИИ Минуты Покоя</h2>
+</header> 
+
 <div style="padding:40px;margin:40px;border:1px solid #ccc">
-    <h1>Загрузка готового опроса</h1>
+   
+  
+  <main>
+  <h1>Загрузка готового опроса</h1>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
@@ -7,4 +15,10 @@
     </form><hr>
     <ul>
     </ul>
+  </main>
+
+    <footer style = "width: 100%;  background-color: #1240AB;  color: white;   text-align: center;  line-height: 1.55;  padding: 20px;  margin-bottom: 20px;  padding: 1rem;  position: fixed;  left: 0;  right: 0;  bottom: 0;  z-index: 10; ">
+      <h1>© НИИ Минуты Покоя</h1>
+      <h2>НИЯУ МИФИ</h2>
+  </footer>
 </div>

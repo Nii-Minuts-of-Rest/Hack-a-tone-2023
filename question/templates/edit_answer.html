@@ -3,8 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <title>Список Вопросов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: white;
+            color: black;
+            font-family: "Gill Sans", sans-serif;
+            text-align: center;
+        }
+
+
+        header{
+            width: 100%;
+            background-color: #1240AB;
+            color: white;
+            text-align: center;
+            line-height: 1.55;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #063d9e;
+        }
+
+        a:hover{
+            color: #cdd0d4;
+            background-color: #03194e;
+        }
+
+        footer{
+            width: 100%;
+            background-color: #1240AB;
+            color: white;
+            text-align: center;
+            line-height: 1.55;
+            padding: 20px;
+            margin-bottom: 20px;
+            padding: 1rem;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+        }
+
+
+
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Хакатон - Корпоративная Академия Росатома</h1>
+        <h2>НИИ Минуты Покоя</h2>
+
+    </header>
+
+    <main>
     <a href="show?id={{answer.question_id.id}}">Назад</a>
     <h2>Отредактировать ответ</h2>
     <h4>Оригинальный ответ {{answer.anwser_text}}</h4>
@@ -16,5 +75,11 @@
         <input name="new_answer" value="{{answer.answer_edited}}" />
         <input type="submit" value="Отправить" />
     </form>
+    </main>
+
+    <footer>
+        <h1>© НИИ Минуты Покоя</h1>
+        <h2>НИЯУ МИФИ</h2>
+    </footer>
 </body>
 </html>

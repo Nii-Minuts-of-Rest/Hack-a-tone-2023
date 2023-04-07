@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Хакатон - НИИ Минуты Покоя</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <h2>Список Вопросов</h2>
+    <a href="add">Импортировать вопрос</a> | <a href="add_e">Добавить вопрос</a>
+    <table>
+        <thead><th>ID</th><th>Вопрос</th><th>Действия</th></thead>
+        {% for question in questions %}
+        <tr>
+            <td>{{ question.id }}</td>
+            <td>{{ question.question_text }}</td>
+            <td>
+                <a href="show?id={{question.id}}">Детализация</a> | <a href="delete?id={{question.id}}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
